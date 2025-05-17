@@ -1,0 +1,59 @@
+[project]
+name = "ace_step"
+version = "0.1.2"
+description = "ACE Step: A Step Towards Music Generation Foundation Model"
+readme = "README.md"
+authors = [
+    {name = "ACE Studio, StepFun AI"},
+    {name = "vffuunnyy", email = "vffuunnyy@gmail.com"},
+]
+license = {text = "Apache 2.0"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+]
+dependencies = [
+    "datasets==3.4.1",
+    "diffusers==0.32.2",
+    "gradio",
+    "librosa==0.11.0",
+    "loguru==0.7.3",
+    "matplotlib==3.10.1",
+    "numpy",
+    "pypinyin==0.53.0",
+    "pytorch_lightning==2.5.1",
+    "soundfile==0.13.1",
+    "torch",
+    "torchaudio",
+    "torchvision",
+    "tqdm",
+    "transformers==4.50.0",
+    "py3langid==0.3.0",
+    "hangul-romanize==0.1.0",
+    "num2words==0.5.14",
+    "spacy==3.8.4",
+    "accelerate==1.6.0",
+    "cutlet",
+    "fugashi[unidic-lite]",
+    "click",
+    "peft",
+    "tensorboard",
+    "tensorboardX",
+    "hf-transfer>=0.1.9",
+]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+acestep = "acestep.gui:main"
+
+[tool.setuptools.package-data]
+"acestep.models.lyrics_utils" = ["vocab.json"]
+
+[tool.setuptools]
+packages = {find = {}}
+include-package-data = true
